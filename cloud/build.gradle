@@ -1,0 +1,26 @@
+class TerraformPlugin implements Plugin<Project> {
+    void apply(Project project) {
+        project.task(type: Exec, 'tfInit') {
+            workingDir 'app'
+            commandLine 'terraform', 'init'
+        }
+        project.task(type: Exec, 'tfPlan') {
+            workingDir 'app'
+            commandLine 'terraform', 'plan', '-out', 'plan.terraform'
+            dependsOn 'tfInit'
+        }
+        project.task(type: Exec, 'tfApply') {
+            workingDir 'app'
+            commandLine 'terraform', 'apply', '-auto-approve', 'plan.terraform'
+            dependsOn 'tfPlan'
+        }
+        project.task(type: Exec, 'tfDestroy') {
+            workingDir 'app'
+            commandLine 'terraform', 'destroy', '-auto-approve'
+            dependsOn 'tfInit'
+        }
+    }
+}
+
+// Apply the plugin
+apply plugin: TerraformPlugin

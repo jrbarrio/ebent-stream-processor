@@ -1,0 +1,8 @@
+repositories {
+    mavenCentral()
+}
+
+allprojects {
+    group 'com.roldan.akka'
+    version '1.0-SNAPSHOT'
+}
