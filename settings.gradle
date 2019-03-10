@@ -1,6 +1,6 @@
 rootProject.name = 'EventStreamProcessor'
 
-include 'cloud'
+include 'terraform'
 include 'producer'
 include 'consumer'
 
