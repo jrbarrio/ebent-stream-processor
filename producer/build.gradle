@@ -1,21 +1,7 @@
-plugins {
-    id 'java'
-}
-
-group 'com.roldan.akka'
-version '1.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    //compile "com.amazonaws:aws-java-sdk:${AWS_JAVA_SDK}"
-    compile "com.amazonaws:aws-java-sdk-sqs:${AWS_JAVA_SDK}"
-
-    compile "com.typesafe:config:1.3.3"
-
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+   // No specific dependencies yet
 }

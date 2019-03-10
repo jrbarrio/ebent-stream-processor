@@ -1,0 +1,9 @@
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'scala'
+
+dependencies {
+    compile "org.scala-lang:scala-library:${SCALA}"
+}
