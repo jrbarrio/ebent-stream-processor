@@ -1,4 +1,5 @@
 rootProject.name = 'EventStreamProcessor'
 
 include 'cloud'
+include 'producer'
 
