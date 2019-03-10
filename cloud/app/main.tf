@@ -12,6 +12,7 @@ provider "aws" {
 
 resource "aws_sqs_queue" "sqs_queue" {
   name = "${var.app}-sqs-queue"
+  receive_wait_time_seconds = 20
 
   tags {
     App = "${var.app}"

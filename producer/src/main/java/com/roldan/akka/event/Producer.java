@@ -1,11 +1,25 @@
 package com.roldan.akka.event;
 
+import com.amazonaws.services.sqs.AmazonSQS;
+import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
+import com.amazonaws.services.sqs.model.SendMessageRequest;
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
+
 public class Producer {
 
     public static void main(String[] args) {
-//        AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
-//        CreateQueueRequest create_request = new CreateQueueRequest(QUEUE_NAME)
-//                .addAttributesEntry("DelaySeconds", "60")
-//                .addAttributesEntry("MessageRetentionPeriod", "86400");
+        Config conf = ConfigFactory.load();
+        String queueUrl = conf.getString("sqs.queue.url");
+
+        AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
+
+        SendMessageRequest send_msg_request = new SendMessageRequest()
+                .withQueueUrl(queueUrl
+                )
+                .withMessageBody("hello world")
+                .withDelaySeconds(5);
+
+        sqs.sendMessage(send_msg_request);
     }
 }
