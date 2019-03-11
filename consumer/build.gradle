@@ -6,4 +6,5 @@ apply plugin: 'scala'
 
 dependencies {
     compile "org.scala-lang:scala-library:${SCALA}"
+    compile "com.lightbend.akka:akka-stream-alpakka-sqs_2.12:1.0-M3"
 }
