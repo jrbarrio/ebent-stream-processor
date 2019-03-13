@@ -3,4 +3,5 @@ rootProject.name = 'EventStreamProcessor'
 include 'terraform'
 include 'producer'
 include 'consumer'
+include 'db'
 

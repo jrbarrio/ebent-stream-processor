@@ -6,18 +6,3 @@ allprojects {
     group 'com.roldan.akka'
     version '1.0-SNAPSHOT'
 }
-
-subprojects {
-    apply plugin: 'java'
-
-    sourceCompatibility = 1.8
-
-    dependencies {
-        //compile "com.amazonaws:aws-java-sdk:${AWS_JAVA_SDK}"
-        compile "com.amazonaws:aws-java-sdk-sqs:${AWS_JAVA_SDK}"
-
-        compile "com.typesafe:config:${TYPESAFE_CONFIG_LIBRARY}"
-
-        testCompile "junit:junit:${JUNIT}"
-    }
-}
